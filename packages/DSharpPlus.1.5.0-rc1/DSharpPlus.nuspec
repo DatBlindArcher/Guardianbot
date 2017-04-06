@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>DSharpPlus</id>
+    <version>1.5.0-rc1</version>
+    <title>DSharpPlus</title>
+    <authors>NaamloosDT, afroraydude, DrCreo, Death</authors>
+    <owners>NaamloosDT, afroraydude, DrCreo, Death</owners>
+    <licenseUrl>https://github.com/NaamloosDT/DSharpPlus/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/NaamloosDT/DSharpPlus</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/NaamloosDT/DSharpPlus/master/logo/d%23%2B.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# API for Discord based off DiscordSharp, but rewritten to fit the API standards</description>
+    <releaseNotes>Updated the way events work + some bugfixes</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>DSharpPlus Discord DiscordSharp API bot</tags>
+    <dependencies>
+      <dependency id="libsodium-net" version="0.10.0-beta3" />
+      <dependency id="Newtonsoft.Json" version="9.0.2-beta1" />
+      <dependency id="WebSocketSharp" version="1.0.3-rc11" />
+    </dependencies>
+  </metadata>
+</package>

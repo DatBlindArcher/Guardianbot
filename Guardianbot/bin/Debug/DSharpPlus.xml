@@ -1,0 +1,2132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DSharpPlus</name>
+    </assembly>
+    <members>
+        <member name="T:DSharpPlus.DiscordClient">
+            <summary>
+            A Discord api wrapper
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.SocketOpened">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.SocketClosed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.Ready">
+            <summary>
+            The ready event is dispatched when a client completed the initial handshake.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.ChannelCreated">
+            <summary>
+            Sent when a new channel is created.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.DMChannelCreated">
+            <summary>
+            Sent when a new dm channel is created.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.ChannelUpdated">
+            <summary>
+            Sent when a channel is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.ChannelDeleted">
+            <summary>
+            Sent when a channel is deleted
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.DMChannelDeleted">
+            <summary>
+            Sent when a dm channel is deleted
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildCreated">
+            <summary>
+            Sent when the user joins a new guild.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildAvailable">
+            <summary>
+            Sent when a guild is becoming available.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildUpdated">
+            <summary>
+            Sent when a guild is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildDeleted">
+            <summary>
+            Sent when the user leaves or is removed from a guild.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildUnavailable">
+            <summary>
+            Sent when a guild becomes unavailable.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageCreated">
+            <summary>
+            Sent when a message is created.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.PresenceUpdate">
+            <summary>
+            Sent when a presence has been updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildBanAdd">
+            <summary>
+            Sent when a guild ban gets added
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildBanRemove">
+            <summary>
+            Sent when a guild ban gets removed
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildEmojisUpdate">
+            <summary>
+            Sent when a guilds emojis get updated
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildIntegrationsUpdate">
+            <summary>
+            Sent when a guild integration is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildMemberAdd">
+            <summary>
+            Sent when a new user joins a guild.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildMemberRemove">
+            <summary>
+            Sent when a user is removed from a guild (leave/kick/ban).
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildMemberUpdate">
+            <summary>
+            Sent when a guild member is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildRoleCreate">
+            <summary>
+            Sent when a guild role is created.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildRoleUpdate">
+            <summary>
+            Sent when a guild role is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildRoleDelete">
+            <summary>
+            Sent when a guild role is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageUpdate">
+            <summary>
+            Sent when a message is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageDelete">
+            <summary>
+            Sent when a message is deleted.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageBulkDelete">
+            <summary>
+            Sent when multiple messages are deleted at once.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.TypingStart">
+            <summary>
+            Sent when a user starts typing in a channel.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.UserSettingsUpdate">
+            <summary>
+            Sent when the current user updates their settings.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.UserUpdate">
+            <summary>
+            Sent when properties about the user change.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.VoiceStateUpdate">
+            <summary>
+            Sent when someone joins/leaves/moves voice channels.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.VoiceServerUpdate">
+            <summary>
+            Sent when a guild's voice server is updated.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.GuildMembersChunk">
+            <summary>
+            Sent in response to Gateway Request Guild Members.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.UnknownEvent">
+            <summary>
+            Sent when an unknown event gets received.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageReactionAdd">
+            <summary>
+            Sent when a reaction gets added to a message.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageReactionRemove">
+            <summary>
+            Sent when a reaction gets removed from a message.
+            </summary>
+        </member>
+        <member name="E:DSharpPlus.DiscordClient.MessageReactionRemoveAll">
+            <summary>
+            Sent when all reactions get removed from a message.
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.DebugLogger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.GatewayVersion">
+            <summary>
+            Gateway protocol version
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.GatewayUrl">
+            <summary>
+            Gateway url
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.Shards">
+            <summary>
+            Number of shards the bot is connected with
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.Me">
+            <summary>
+            The current user
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.PrivateChannels">
+            <summary>
+            List of DM Channels
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordClient.Guilds">
+            <summary>
+            List of Guilds
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.#ctor">
+            <summary>
+            Intializes a new instance of DiscordClient
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.#ctor(DSharpPlus.DiscordConfig)">
+            <summary>
+            Initializes a new instance of DiscordClient
+            </summary>
+            <param name="config">Overwrites the default config</param>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.Connect">
+            <summary>
+            Connects to the gateway
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.Connect(System.String,DSharpPlus.TokenType)">
+            <summary>
+            Connects to the gateway
+            </summary>
+            <param name="tokenOverride"></param>
+            <param name="tokenType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.AddModule(DSharpPlus.IModule)">
+            <summary>
+            Adds a new module to the module list
+            </summary>
+            <param name="module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetModule``1">
+            <summary>
+            Gets a module from the module list by type
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.Disconnect">
+            <summary>
+            Disconnects from the gateway
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetUser(System.String)">
+            <summary>
+            Gets a user
+            </summary>
+            <param name="user">userid or @me</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.DeleteChannel(System.UInt64)">
+            <summary>
+            Deletes a channel
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.DeleteChannel(DSharpPlus.DiscordChannel)">
+            <summary>
+            Deletes a channel
+            </summary>
+            <param name="channel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetMessage(DSharpPlus.DiscordChannel,System.UInt64)">
+            <summary>
+            Gets a message
+            </summary>
+            <param name="channel"></param>
+            <param name="MessageID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetMessage(System.UInt64,System.UInt64)">
+            <summary>
+            Gets a message
+            </summary>
+            <param name="ChannelID"></param>
+            <param name="MessageID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetChannel(System.UInt64)">
+            <summary>
+            Gets a channel
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.SendMessage(System.UInt64,System.String,System.Boolean,DSharpPlus.DiscordEmbed)">
+            <summary>
+            Sends a message
+            </summary>
+            <param name="channelId"></param>
+            <param name="content"></param>
+            <param name="tts"></param>
+            <param name="embed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.SendMessage(DSharpPlus.DiscordChannel,System.String,System.Boolean,DSharpPlus.DiscordEmbed)">
+            <summary>
+            Sends a message
+            </summary>
+            <param name="channel"></param>
+            <param name="content"></param>
+            <param name="tts"></param>
+            <param name="embed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.SendMessage(DSharpPlus.DiscordDMChannel,System.String,System.Boolean,DSharpPlus.DiscordEmbed)">
+            <summary>
+            Sends a message
+            </summary>
+            <param name="channel"></param>
+            <param name="content"></param>
+            <param name="tts"></param>
+            <param name="embed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.CreateGuild(System.String)">
+            <summary>
+            Creates a guild. Only for whitelisted bots
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetGuild(System.UInt64)">
+            <summary>
+            Gets a guild
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.DeleteGuild(System.UInt64)">
+            <summary>
+            Deletes a guild
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.DeleteGuild(DSharpPlus.DiscordGuild)">
+            <summary>
+            Deletes a guild
+            </summary>
+            <param name="Guild"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetChannelByID(System.UInt64)">
+            <summary>
+            Gets a channel
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetInviteByCode(System.String)">
+            <summary>
+            Gets an invite
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetConnections">
+            <summary>
+            Gets a list of connections
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.ListRegions">
+            <summary>
+            Gets a list of regions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetWebhook(System.UInt64)">
+            <summary>
+            Gets a webhook
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetWebhookWithToken(System.UInt64,System.String)">
+            <summary>
+            Gets a webhook
+            </summary>
+            <param name="ID"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.CreateDM(System.UInt64)">
+            <summary>
+            Creates a dm
+            </summary>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.UpdateStatus(System.String,System.Int32)">
+            <summary>
+            Updates current user's status
+            </summary>
+            <param name="game">Game you're playing</param>
+            <param name="idle_since"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.ModifyMember(System.UInt64,System.UInt64,System.String,System.Collections.Generic.List{System.UInt64},System.Boolean,System.Boolean,System.UInt64)">
+            <summary>
+            Modifies a guild member
+            </summary>
+            <param name="GuildID">Guild's ID</param>
+            <param name="MemberID">Member's ID</param>
+            <param name="Nickname">Member's (new) Nickname</param>
+            <param name="Roles">Member's roles</param>
+            <param name="Muted">Wether this member has been muted or not (voice)</param>
+            <param name="Deaf">Wether this member has been deafened or not (voice)</param>
+            <param name="VoiceChannelID">Voice channel ID for moving this user around</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetCurrentApp">
+            <summary>
+            Gets the current API appication.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.GetUserPresence(System.UInt64)">
+            <summary>
+            Gets cached presence for a user.
+            </summary>
+            <param name="UserID">User's ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.ListGuildMembers(System.UInt64,System.Int32,System.Int32)">
+            <summary>
+            Lists guild members
+            </summary>
+            <param name="guildID">Guild's ID</param>
+            <param name="limit">limit of members to return</param>
+            <param name="after">index to start from</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.SetAvatar(System.String)">
+            <summary>
+            Sets bot avatar
+            </summary>
+            <param name="Path">Path to JPEG file</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordClient.Dispose">
+            <summary>
+            Disposes your DiscordClient.
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.LogLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.LogLevel.Unnecessary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.LogLevel.Debug">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.LogLevel.Info">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.LogLevel.Warning">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.LogLevel.Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.LogLevel.Critical">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.MentionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.MentionType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.MentionType.Username">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.MentionType.Nickname">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.MentionType.Channel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.MentionType.Role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordAttachment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordAttachment.FileName">
+            <summary>
+            Name of the file
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordAttachment.FileSize">
+            <summary>
+            File size in bytes
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordAttachment.Url">
+            <summary>
+            File URL
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordAttachment.ProxyUrl">
+            <summary>
+            Proxy file URL
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordAttachment.Height">
+            <summary>
+            Height (if image)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordAttachment.Width">
+            <summary>
+            Width (if image)
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordConnection">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordConnection.Name">
+            <summary>
+            The username of the connection account
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordConnection.Type">
+            <summary>
+            The service of the connection
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordConnection.Revoked">
+            <summary>
+            Whether the connection is revoked
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordConnection.Integrations">
+            <summary>
+            A list of partial server integrations
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordInvite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInvite.Code">
+            <summary>
+            The invite code (unique ID)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInvite.Guild">
+            <summary>
+            The guild this invite is for
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInvite.Channel">
+            <summary>
+            The channel this invite is for
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordInvite.Delete">
+            <summary>
+            Delete the invite
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordInvite.Accept">
+            <summary>
+            Accept an invite. Not available to bot accounts. Requires "guilds.join" scope or user token.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DSharpPlus.Branch">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Branch.Stable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Branch.PTB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Branch.Canary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.ChannelType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.ChannelType.Text">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.ChannelType.Voice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.PermissionLevel">
+            <summary>
+            Wether a permission is allowed, denied or unset
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.PermissionLevel.Allowed">
+            <summary>
+            Said permission is Allowed
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.PermissionLevel.Denied">
+            <summary>
+            Said permission is Denied
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.PermissionLevel.Unset">
+            <summary>
+            Said permission is Unset
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.Permission">
+            <summary>
+            Bitwise permission flags
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.CreateInstantInvite">
+            <summary>
+            Allow creation of instant invites
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.KickMembers">
+            <summary>
+            Allows kicking members
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.BanMembers">
+            <summary>
+            Allows banning members
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.Administrator">
+            <summary>
+            Allows all permissions and bypasses channel permission overwrites
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageChannels">
+            <summary>
+            Allows management and editing of channels
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageGuild">
+            <summary>
+            Allows management and editing of the guild
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.AddReactions">
+            <summary>
+            Allows for the addition of reactions to messages
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ReadMessages">
+            <summary>
+            Allows reading messages in a channel. The channel will not appear for users without this permission
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.SendMessages">
+            <summary>
+            Allows for sending messages in a channel.
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.SendTTSMessages">
+            <summary>
+            Allows for sending of tts messages
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageMessages">
+            <summary>
+            Allows for deletion of other users messages
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.EmbedLinks">
+            <summary>
+            Links sent by this user will be auto-embedded
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.AttachFiles">
+            <summary>
+            Allows for uploading images and files
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ReadMessageHistory">
+            <summary>
+            Allows for reading of message history
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.MentionEveryone">
+            <summary>
+            Allows for using the @everyone tag to notify all users in a channel, and the @here tag to notify all online users in a channel
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.UseExternalEmojis">
+            <summary>
+            Allows the usage of custom emojis from other servers
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.Connect">
+            <summary>
+            Allows for joining of a voice channel
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.Speak">
+            <summary>
+            Allows for speaking in a voice channel
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.MuteMembers">
+            <summary>
+            Allows for muting members in a voice channel
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.DeafenMembers">
+            <summary>
+            Allows for deafening of members in a voice channel
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.MoveMembers">
+            <summary>
+            Allows for moving of members between voice channels
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.UseVAD">
+            <summary>
+            Allows for using voice-activity-detection in a voice channel
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ChangeNickname">
+            <summary>
+            Allows for modification of own nickname
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageNicknames">
+            <summary>
+            Allows for modification of other users nicknames
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageRoles">
+            <summary>
+            Allows management and editing of roles
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageWebhooks">
+            <summary>
+            Allows management and editing of webhooks
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.Permission.ManageEmojis">
+            <summary>
+            Allows management and editing of emojis
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.TokenType">
+            <summary>
+            Token type
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.TokenType.User">
+            <summary>
+            User token type
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.TokenType.Bot">
+            <summary>
+            Bot token type
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.TokenType.Bearer">
+            <summary>
+            Bearer token type
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Title">
+            <summary>
+            Title of the embed
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Type">
+            <summary>
+            Type of the embed ("rich" for webhook embeds)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Description">
+            <summary>
+            Description of the embed
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Url">
+            <summary>
+            Url of the embed
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Timestamp">
+            <summary>
+            Timestamp of the embed content
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Color">
+            <summary>
+            Color code of the embed
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Footer">
+            <summary>
+            Footer information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Image">
+            <summary>
+            Image information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Thumbnail">
+            <summary>
+            Thumbnail information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Video">
+            <summary>
+            Video information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Provider">
+            <summary>
+            Provider information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Author">
+            <summary>
+            Author information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbed.Fields">
+            <summary>
+            Fields information
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedAuthor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedAuthor.Name">
+            <summary>
+            Name of the author
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedAuthor.Url">
+            <summary>
+            Url of the author
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedAuthor.IconUrl">
+            <summary>
+            Url of the author icon (https only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedAuthor.ProxyIconUrl">
+            <summary>
+            A proxied url of the author icon
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedField.Name">
+            <summary>
+            Name of the field
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedField.Value">
+            <summary>
+            Value of the field
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedField.Inline">
+            <summary>
+            Whether or not this field should display inline
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedFooter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedFooter.Text">
+            <summary>
+            Footer text
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedFooter.IconUrl">
+            <summary>
+            Url of the footer icon (https only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedFooter.ProxyIconUrl">
+            <summary>
+            A proxied url of the footer icon
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedImage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedImage.Url">
+            <summary>
+            Source url of the image (https only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedImage.ProxyUrl">
+            <summary>
+            A proxied url of the image
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedImage.Height">
+            <summary>
+            Height of the image
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedImage.Width">
+            <summary>
+            Width of the image
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedProvider.Name">
+            <summary>
+            Name of the provider
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedProvider.Url">
+            <summary>
+            Url of the provider
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedThumbnail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedThumbnail.Url">
+            <summary>
+            Source url of the thumbnail (only https)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedThumbnail.ProxyUrl">
+            <summary>
+            A proxied url of the thumbnail
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedThumbnail.Height">
+            <summary>
+            Height of the thumbnail
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedThumbnail.Width">
+            <summary>
+            Width of the thumbnail
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmbedVideo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedVideo.Url">
+            <summary>
+            Source url of the video
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedVideo.Height">
+            <summary>
+            Height of video
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmbedVideo.Width">
+            <summary>
+            Width of video
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordGuildEmbed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuildEmbed.Enabled">
+            <summary>
+            If the embed is enabled
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuildEmbed.ChannelID">
+            <summary>
+            The embed channel id
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordIntegration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.Name">
+            <summary>
+            Integration name
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.Type">
+            <summary>
+            Integration type
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.Enabled">
+            <summary>
+            Is this integration enabled
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.Syncing">
+            <summary>
+            Is this integration syncing
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.RoleID">
+            <summary>
+            ID that this integration uses for "subscribers"
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.ExpireBehavior">
+            <summary>
+            The behavior of expiring subscribers
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.ExpireGracePeriod">
+            <summary>
+            The grace period before expiring subscribers
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.User">
+            <summary>
+            User for this integration
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.Account">
+            <summary>
+            Integration account information
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegration.SyncedAt">
+            <summary>
+            When this integration was last synced
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordIntegrationAccount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordIntegrationAccount.Name">
+            <summary>
+            Name of the account
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordInviteChannel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteChannel.Name">
+            <summary>
+            Name of the channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteChannel.Type">
+            <summary>
+            "Text" or "Voice"
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordInviteGuild">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteGuild.Name">
+            <summary>
+            Name of the guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteGuild.SplashName">
+            <summary>
+            Hash of the guild splash
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordInviteMetadata">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.Inviter">
+            <summary>
+            User who created the invite
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.Uses">
+            <summary>
+            Number of times this invite has been used
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.MaxUses">
+            <summary>
+            Max number of times this invite can be used
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.MaxAge">
+            <summary>
+            Duration after which the invite expires
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.Temporary">
+            <summary>
+            Whether this invite only grants temporary membership
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.CreatedAt">
+            <summary>
+            When this invite was created
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordInviteMetadata.Revoked">
+            <summary>
+            Whether this invite is revoked
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordOverwrite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordOverwrite.Type">
+            <summary>
+            Either "role" or "member"
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordOverwrite.Allow">
+            <summary>
+            Termission bit set
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordOverwrite.Deny">
+            <summary>
+            Permission bit set
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordReaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordReaction.Count">
+            <summary>
+            Times this emoji has been used to react
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordReaction.Me">
+            <summary>
+            Whether the current user reacted using this emoji
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordReaction.Emoji">
+            <summary>
+            Emoji information
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordWebhook">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordWebhook.GuildID">
+            <summary>
+            The guild id this webhook is for
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordWebhook.ChannelID">
+            <summary>
+            The channel id this webhook is for
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordWebhook.User">
+            <summary>
+            The user this webhook was created by
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordWebhook.Name">
+            <summary>
+            The default name of webhook
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordWebhook.Avatar">
+            <summary>
+            The default avatar of webhook
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordWebhook.Token">
+            <summary>
+            The secure token of the webhook
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordWebhook.Modify(System.String,System.String)">
+            <summary>
+            Modify the webhook
+            </summary>
+            <param name="name"></param>
+            <param name="base64avatar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordWebhook.Delete">
+            <summary>
+            Delete the webhook permanently
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordWebhook.Execute(System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{DSharpPlus.DiscordEmbed})">
+            <summary>
+            
+            </summary>
+            <param name="content"></param>
+            <param name="username"></param>
+            <param name="avatarurl"></param>
+            <param name="tts"></param>
+            <param name="embeds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordWebhook.ExecuteSlack(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="Json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordWebhook.ExecuteGithub(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="Json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.Voice.DiscordVoiceClient.SendAsync(System.Byte[],System.UInt32)">
+            <summary>
+            Sends an audio packet over the UDP connection.
+            </summary>
+            <param name="data"></param>
+            <param name="framelength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DSharpPlus.DiscordChannel">
+            <summary>
+            Represents a discord channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.GuildID">
+            <summary>
+            The id of the guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Name">
+            <summary>
+            The name of the channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Type">
+            <summary>
+            The type of the channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Position">
+            <summary>
+            Sorting position of the channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.IsPrivate">
+            <summary>
+            Should always be false for guild channels
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Parent">
+            <summary>
+            The guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.PermissionOverwrites">
+            <summary>
+            A list of permission overwrite
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Topic">
+            <summary>
+            The channel topic (Text only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.LastMessageID">
+            <summary>
+            The id of the last message (Text only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Bitrate">
+            <summary>
+            The channel bitrate (Voice only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.UserLimit">
+            <summary>
+            The channel user limit (Voice only)
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordChannel.Mention">
+            <summary>
+            Mentions the channel similar to how a client would
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.SendMessage(System.String,System.Boolean,DSharpPlus.DiscordEmbed)">
+            <summary>
+            Posts a message
+            </summary>
+            <param name="content"></param>
+            <param name="tts"></param>
+            <param name="embed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.SendFile(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Posts a file
+            </summary>
+            <param name="filepath"></param>
+            <param name="filename"></param>
+            <param name="content"></param>
+            <param name="tts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.Delete">
+            <summary>
+            Deletes a guild channel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.GetMessage(System.UInt64)">
+            <summary>
+            Returns a specific message
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.ModifyPosition(System.Int32)">
+            <summary>
+            Updates the channel position
+            </summary>
+            <param name="position"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.GetMessages(System.UInt64,System.UInt64,System.UInt64,System.Int32)">
+            <summary>  
+            Returns a list of messages.Only set ONE of the three parameters. They are Message ID's
+            </summary> 
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.BulkDeleteMessages(System.Collections.Generic.List{System.UInt64})">
+            <summary>
+            Deletes multiple messages
+            </summary>
+            <param name="MessageIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.GetInvites">
+            <summary>
+            Returns a list of invite objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.CreateInvite(System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new invite object
+            </summary>
+            <param name="MaxAge"></param>
+            <param name="MaxUses"></param>
+            <param name="temporary"></param>
+            <param name="unique"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.DeleteChannelPermission(System.UInt64)">
+            <summary>
+            Deletes a channel permission overwrite
+            </summary>
+            <param name="OverwriteID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.TriggerTyping">
+            <summary>
+            Post a typing indicator
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.GetPinnedMessages">
+            <summary>
+            Returns all pinned messages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.CreateWebhook(System.String,System.String)">
+            <summary>
+            Create a new webhook
+            </summary>
+            <param name="name"></param>
+            <param name="base64avatar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.GetWebhooks">
+            <summary>
+            Returns a list of webhooks
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.ConnectToVoice">
+            <summary>
+            Connects to this voice
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordChannel.PlaceMember(System.UInt64)">
+            <summary>
+            Moves a member to this voice channel
+            </summary>
+            <param name="MemberID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DSharpPlus.DiscordDMChannel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordDMChannel.Recipient">
+            <summary>
+            The recipient of the dm
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordDMChannel.AddDMRecipient(System.UInt64,System.String)">
+            <summary>
+            Only use for Group DM's! Whitelised bots only. Requires user's oauth2 access token
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordDMChannel.RemoveDMRecipient(System.UInt64,System.String)">
+            <summary>
+            Only use for Group DM's!
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordEmoji">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmoji.Name">
+            <summary>
+            Emoji Name
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmoji.Roles">
+            <summary>
+            Roles this emoji is active for
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmoji.RequireColons">
+            <summary>
+            Whether this emoji must be wrapped in colons
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordEmoji.Managed">
+            <summary>
+            Whether this emoji is managed
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordGuild">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Name">
+            <summary>
+            Guild name
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Icon">
+            <summary>
+            Icon hash
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.IconUrl">
+            <summary>
+            Icon Url
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Splash">
+            <summary>
+            Splash hash
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.OwnerID">
+            <summary>
+            ID of the owner
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.RegionID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.AFKChannelID">
+            <summary>
+            ID of the afk channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.AFKTimeout">
+            <summary>
+            AFK timeout in seconds
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.EmbedEnabled">
+            <summary>
+            Is this guild embeddable
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.EmbedChannelID">
+            <summary>
+            ID of embedded channel
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.VerificationLevel">
+            <summary>
+            Level of verification
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.DefaultMessageNotifications">
+            <summary>
+            Default message notifications level
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Roles">
+            <summary>
+            List of role objects
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Emojis">
+            <summary>
+            List of emoji objects
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Features">
+            <summary>
+            List of guild features
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.MFALevel">
+            <summary>
+            Required MFA level for this guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.JoinedAt">
+            <summary>
+            Date this guild was joined at
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Large">
+            <summary>
+            Whether this is considered a large guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Unavailable">
+            <summary>
+            Is this guild unavailable
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.MemberCount">
+            <summary>
+            Total number of members in this guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.VoiceStates">
+            <summary>
+            List of voice state objects
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Members">
+            <summary>
+            List of guild member objects
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordGuild.Channels">
+            <summary>
+            List of channel objects
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.Presences">
+            <summary>
+            List of simple presence objects
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordGuild.IsOwner">
+            <summary>
+            Is the current user the guild owner
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordMember">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMember.User">
+            <summary>
+            User object
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMember.Nickname">
+            <summary>
+            This users guild nickname
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMember.Roles">
+            <summary>
+            List of role object id's
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMember.JoinedAt">
+            <summary>
+            Date the user joined the guild
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMember.IsDeafened">
+            <summary>
+            If the user is deafened
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMember.IsMuted">
+            <summary>
+            If the user is muted
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.ChannelID">
+            <summary>
+            ID of the channel the message was sent in
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Parent">
+            <summary> 
+            The channel the message was sent in
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Author">
+            <summary>
+            The author of this message
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Content">
+            <summary>
+            Contents of the message
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.TimestampRaw">
+            <summary>
+            When this message was sent
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Timestamp">
+            <summary>
+            When this message was sent
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.EditedTimestampRaw">
+            <summary>
+            When this message was edited
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.EditedTimestamp">
+            <summary>
+            When this message was edited
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.TTS">
+            <summary>
+            Whether this was a tts message
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.MentionEveryone">
+            <summary>
+            Whether this message mentions everyone
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Mentions">
+            <summary>
+            Users specifically mentioned in the message
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.MentionedRoles">
+            <summary>
+            Roles specifically mention in the message
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Attachments">
+            <summary>
+            Any attached files
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Embeds">
+            <summary>
+            Any embedded content
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Reactions">
+            <summary>
+            Reactions of the message
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Nonce">
+            <summary>
+            Used for validating a message was sent
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.Pinned">
+            <summary>
+            Whether this message is pinned
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordMessage.WebhookID">
+            <summary>
+            If generated by webhook, this is the webhook's id
+            </summary>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.Edit(System.String)">
+            <summary>
+            Edit the message
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.Delete">
+            <summary>
+            Deletes the message
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.Pin">
+            <summary>
+            Pin the message
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.Unpin">
+            <summary>
+            Unpin the message
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.Respond(System.String,System.Boolean,DSharpPlus.DiscordEmbed)">
+            <summary>
+            Respond to the message
+            </summary>
+            <param name="content"></param>
+            <param name="tts"></param>
+            <param name="embed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.Respond(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Respond to the message
+            </summary>
+            <param name="content"></param>
+            <param name="filepath"></param>
+            <param name="filename"></param>
+            <param name="tts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.CreateReaction(System.String)">
+            <summary>
+            Creates a reaction to this message
+            </summary>
+            <param name="emoji">The emoji you want to react with, either an emoji or name:id</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.DeleteOwnReaction(System.String)">
+            <summary>
+            Deletes your own reaction
+            </summary>
+            <param name="emoji">Emoji for the reaction you want to remove, either an emoji or name:id</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.DeleteReaction(System.String,DSharpPlus.DiscordMember)">
+            <summary>
+            Deletes another user's reaction.
+            </summary>
+            <param name="emoji">Emoji for the reaction you want to remove, either an emoji or name:id</param>
+            <param name="Member">Member you want to remove the reaction for</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.DeleteReaction(System.String,System.UInt64)">
+            <summary>
+            Deletes another user's reaction.
+            </summary>
+            <param name="emoji">Emoji for the reaction you want to remove, either an emoji or name:id</param>
+            <param name="UserID">User ID of the member you want to remove the reaction for</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.GetReactions(System.String)">
+            <summary>
+            Gets users that reacted with this emoji
+            </summary>
+            <param name="emoji">Either an emoji or a name:id</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSharpPlus.DiscordMessage.DeleteAllReactions">
+            <summary>
+            Deletes all reactions for this message
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DSharpPlus.DiscordRole">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Name">
+            <summary>
+            Role name
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Color">
+            <summary>
+            Integer representation of a hexadecimal color code
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Hoist">
+            <summary>
+            Whether this role is pinned
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Position">
+            <summary>
+            Position of this role
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Permissions">
+            <summary>
+            Permission bit set
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Managed">
+            <summary>
+            Whether this role is managed by an integration
+            </summary>
+        </member>
+        <member name="F:DSharpPlus.DiscordRole.Mentionable">
+            <summary>
+            Whether this role is mentionable
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordRole.Mention">
+            <summary>
+            Mentions the role similar to how a client would, if the role is mentionable
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordVoiceRegion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.ID">
+            <summary>
+            Unique ID for the region
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.Name">
+            <summary>
+            Name of the region
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.SampleHostname">
+            <summary>
+            An example hostname for the region
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.SamplePort">
+            <summary>
+            An example port for the region
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.VIP">
+            <summary>
+            true if this is a vip-only server
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.Optimal">
+            <summary>
+            true for a single server that is closest to the current user's client
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.Deprecated">
+            <summary>
+            Whether this is a deprecated voice region
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceRegion.Custom">
+            <summary>
+            Whether this is a custom voice region
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordVoiceState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.GuildID">
+            <summary>
+            The guild id this voice state is for
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.ChannelID">
+            <summary>
+            The channel id this user is connected to
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.UserID">
+            <summary>
+            The user id this voice state is for
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.SessionID">
+            <summary>
+            The session id for this voice state
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.Deaf">
+            <summary>
+            Whether this user is deafened by the server
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.Mute">
+            <summary>
+            Whether this user is muted by the server
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.SelfDeaf">
+            <summary>
+            Whether this user is locally deafened
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.SelfMute">
+            <summary>
+            Whether this user is locally muted
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordVoiceState.Suppress">
+            <summary>
+            Whether this user is muted by the current user
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.SnowflakeObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.SnowflakeObject.ID">
+            <summary>
+            The ID of the current object
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.SnowflakeObject.CreationDate">
+            <summary>
+            The create date of the current object
+            </summary>
+        </member>
+        <member name="T:DSharpPlus.DiscordUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.Discriminator">
+            <summary>
+            The user's 4-digit tag
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.AvatarHash">
+            <summary>
+            The user's avatar hash
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.AvatarUrl">
+            <summary>
+            The user's avatar url
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.IsBot">
+            <summary>
+            Whether the user belongs to an oauth2 application
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.MFAEnabled">
+            <summary>
+            Whether the user has tho factor enabled
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.Verified">
+            <summary>
+            Whether the email on this account has been verified
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.Email">
+            <summary>
+            The user's email
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.Mention">
+            <summary>
+            Mentions the user similar to how a client would
+            </summary>
+        </member>
+        <member name="P:DSharpPlus.DiscordUser.Presence">
+            <summary>
+            This user's presence.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,17 @@
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Guardianbot.exe.config
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\obj\Debug\Guardianbot.csprojResolveAssemblyReference.cache
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Guardianbot.exe
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Guardianbot.pdb
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\DSharpPlus.dll
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\HtmlAgilityPack.dll
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Newtonsoft.Json.dll
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Sodium.dll
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\websocket-sharp.dll
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\DSharpPlus.pdb
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\DSharpPlus.xml
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\HtmlAgilityPack.pdb
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\HtmlAgilityPack.xml
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Newtonsoft.Json.xml
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\websocket-sharp.xml
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\obj\Debug\Guardianbot.exe
+d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\obj\Debug\Guardianbot.pdb
