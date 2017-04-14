@@ -10,6 +10,15 @@ using HtmlAgilityPack;
 
 namespace GuardianBot
 {
+    public enum MessageType
+    {
+        MSG,
+        ERROR,
+        COMMAND,
+        UPDATE,
+        EVENT
+    }
+
     class Program
     {
         public static DiscordClient client;
@@ -23,55 +32,94 @@ namespace GuardianBot
         public static ulong mode;
         public static bool inmode;
         public static Thread updater;
+        public static bool log;
+        public static string logpath;
+        public static bool running;
+        public static bool reconnect;
 
         static bool ReadNext()
         {
-            string raw = Console.ReadLine();
-            string[] rsplit = raw.Split(' ');
-            string[] split = raw.ToLower().Split(' ');
-
-            switch (split[0])
+            try
             {
-                case "hello":
-                    client.Guilds.Values.First().Channels[0].SendMessage("Hello World!");
-                    break;
+                string raw = Console.ReadLine();
+                string[] rsplit = raw.Split(' ');
+                string[] split = raw.ToLower().Split(' ');
+                writeLog(MessageType.COMMAND, raw);
 
-                case "reload":
-                    reload();
-                    break;
+                switch (split[0])
+                {
+                    case "hello":
+                        client.Guilds.Values.First().Channels[0].SendMessage("Hello World!");
+                        break;
 
-                case "say":
-                    string message = "";
-                    for (int i = 2; i < split.Length; i++) message += rsplit[i] + " ";
-                    client.Guilds.Values.First().Channels.Where(x => x.Name == split[1]).FirstOrDefault().SendMessage(message);
-                    break;
+                    case "reload":
+                        reload();
+                        break;
 
-                case "help":
-                    Console.WriteLine("hello");
-                    Console.WriteLine("say <channelname> <text>");
-                    Console.WriteLine("clean");
-                    Console.WriteLine("reload");
-                    Console.WriteLine("exit");
-                    break;
+                    case "say":
+                        string message = "";
+                        for (int i = 2; i < split.Length; i++) message += rsplit[i] + " ";
+                        client.Guilds.Values.First().Channels.Where(x => x.Name == split[1]).FirstOrDefault().SendMessage(message);
+                        break;
 
-                case "clean":
-                    Clean();
-                    break;
+                    case "help":
+                        Console.WriteLine("hello");
+                        Console.WriteLine("say <channelname> <text>");
+                        Console.WriteLine("clean");
+                        Console.WriteLine("reload");
+                        Console.WriteLine("exit");
+                        break;
 
-                case "exit":
-                    return false;
+                    case "clean":
+                        Clean();
+                        break;
+
+                    case "log":
+                        log = !log;
+                        break;
+
+                    case "exit":
+                        return false;
+                }
+            }
+
+            catch (Exception e)
+            {
+                writeLog(MessageType.ERROR, "Console:" + e.Message);
+                Console.WriteLine("Something went wrong, try again.");
             }
 
             return true;
         }
 
+        static void writeLog(MessageType type, string message)
+        {
+            if (log)
+            {
+                using (StreamWriter logWriter = new StreamWriter(logpath, true))
+                {
+                    logWriter.WriteLine(DateTime.Now.ToShortTimeString() + " | " + type.ToString() + " | " + message);
+                    logWriter.Close();
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
+            log = true;
             inmode = false;
+            running = true;
+            reconnect = false;
+            logpath = "Logs/" + DateTime.Now.ToShortDateString().Replace('/', '_') + ".log";
+            writeLog(MessageType.MSG, "Starting ...");
             lastNews = "http://aq3d.com/news/ui3/";
+            writeLog(MessageType.MSG, "Loading info ...");
             players = new Dictionary<ulong, string>();
             modes = new Dictionary<ulong, string>();
             timeouts = new SortedList<DateTime, ulong>();
+            loadPlayers();
+            reload();
+            writeLog(MessageType.MSG, "Connecting ...");
             Console.Title = "Guardian Spirit";
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Connecting ...");
@@ -84,12 +132,12 @@ namespace GuardianBot
 
             client.Connect();
             Console.WriteLine("Connected!");
+            writeLog(MessageType.MSG, "Connected, setting up ...");
             Console.WriteLine("Getting database ...");
-            loadPlayers();
             loadRoles();
-            reload();
             updater = new Thread(UpdateBot);
             updater.Start();
+            writeLog(MessageType.MSG, "Setup finished.");
 
             client.GuildMemberAdd += async e =>
             {
@@ -106,6 +154,7 @@ namespace GuardianBot
                         {
                             await e.Message.Delete();
                             await SendMessage2(e.Channel, e.Message.Author.Username + ", watch your language");
+                            writeLog(MessageType.EVENT, e.Message.Author.Username + "'s message was filtered.");
                             break;
                         }
                     }
@@ -115,40 +164,83 @@ namespace GuardianBot
                 {
                     try
                     {
+                        writeLog(MessageType.COMMAND, e.Message.Author.Username + " has sent: " + e.Message.Content);
                         await HandleCommands(e);
                     }
 
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
-                        await SendMessage2(e.Channel, e.Message.Author.Username + ", dont try to crash me");
+                        writeLog(MessageType.ERROR, ex.Message);
+                        //await SendMessage2(e.Channel, e.Message.Author.Username + ", dont try to crash me");
                     }
                 }
             };
+
+            client.SocketClosed += async e =>
+            {
+                if (running && !reconnect)
+                {
+                    writeLog(MessageType.MSG, "Reconnecting ...");
+                    reconnect = true;
+                }
+
+                await new Task(() =>
+                {
+                    if (running && !reconnect)
+                    {
+                        Console.WriteLine("Bot socket closed.");
+                    }
+                });
+            };
             
             Console.WriteLine("The bot is running, you can type commands now.");
+            writeLog(MessageType.MSG, "Bot is ready.");
             while (ReadNext());
             Console.WriteLine("Press anything to close ...");
             Console.ReadKey();
+            writeLog(MessageType.MSG, "Bot is closing ...");
+            running = false;
+            updater.Abort();
             client.Disconnect();
             client.Dispose();
             savePlayers();
+            writeLog(MessageType.MSG, "Bot is closed.");
         }
 
-        private static void UpdateBot()
+        private static async void UpdateBot()
         {
-            Thread.Sleep(30000);
-
-            if (timeouts.Count > 0)
+            while (running)
             {
-                while (timeouts.Keys[0] < DateTime.Now)
+                Thread.Sleep(300000);
+
+                try
                 {
-                    untimeout(timeouts.Values[0]);
-                    timeouts.Remove(timeouts.Keys[0]);
+                    if (timeouts.Count > 0)
+                    {
+                        while (timeouts.Keys[0] < DateTime.Now)
+                        {
+                            untimeout(timeouts.Values[0]);
+                            timeouts.Remove(timeouts.Keys[0]);
+                        }
+                    }
+
+                    if (reconnect)
+                    {
+                        await client.Reconnect();
+                        reconnect = false;
+                        writeLog(MessageType.MSG, "Reconnected.");
+                    }
+
+                    bool hasNews = await checkNews();
+                    writeLog(MessageType.UPDATE, "Update has " + (hasNews ? "" : "no ") + "news.");
+                }
+
+                catch (Exception e)
+                {
+                    writeLog(MessageType.ERROR, "Update: " + e.Message);
                 }
             }
-
-            checkNews();
         }
 
         private static async void Clean()
@@ -585,7 +677,7 @@ namespace GuardianBot
                             return;
                         }
 
-                        players.Remove(getUserID(arguments[1]));
+                        players.Remove(playerID);
                         savePlayers();
                     }
                     break;
@@ -867,7 +959,7 @@ namespace GuardianBot
             return message.TrimEnd('\n');
         }
 
-        private static async void checkNews()
+        private static async Task<bool> checkNews()
         {
             string html;
 
@@ -881,7 +973,7 @@ namespace GuardianBot
 
             catch
             {
-                return;
+                return false;
             }
 
             HtmlDocument doc = new HtmlDocument();
@@ -889,6 +981,7 @@ namespace GuardianBot
             HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("//div[@class='caption']/a");
             DiscordChannel news = client.Guilds[289077903403122689].Channels.Where(x => x.ID == 289567617767833600).FirstOrDefault();
 
+            bool result = false;
             foreach (HtmlNode node in nodes)
             {
                 string tNews = "http://aq3d.com" + node.GetAttributeValue("href", "");
@@ -896,10 +989,13 @@ namespace GuardianBot
                 if (lastNews == tNews)
                     break;
 
+                result = true;
                 lastNews = tNews;
                 await news.SendMessage(tNews);
                 saveTimeouts();
             }
+
+            return result;
         }
     }
 }

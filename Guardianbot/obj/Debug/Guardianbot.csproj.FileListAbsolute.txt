@@ -15,3 +15,20 @@ d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\Newto
 d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\bin\Debug\websocket-sharp.xml
 d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\obj\Debug\Guardianbot.exe
 d:\documents\visual studio 2015\Projects\Guardianbot\Guardianbot\obj\Debug\Guardianbot.pdb
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\Guardianbot.exe.config
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\obj\Debug\Guardianbot.exe
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\obj\Debug\Guardianbot.pdb
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\Guardianbot.exe
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\Guardianbot.pdb
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\DSharpPlus.dll
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\HtmlAgilityPack.dll
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\Sodium.dll
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\websocket-sharp.dll
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\DSharpPlus.pdb
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\DSharpPlus.xml
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\HtmlAgilityPack.pdb
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\HtmlAgilityPack.xml
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\bin\Debug\websocket-sharp.xml
+D:\Documents\Documents\GitHub\Guardianbot\Guardianbot\obj\Debug\Guardianbot.csprojResolveAssemblyReference.cache
